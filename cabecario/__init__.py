@@ -1,5 +1,9 @@
 def painel(mensagem):
-#
+    '''
+
+    :param mensagem: A imagem que você escolhe para aparecer no painel de boas vindas, o inicio do código
+    '''
+
     print('-'*40)
     print(f'\033[1;32m{mensagem}\033[m'.center(45))
     print('-' * 40)
