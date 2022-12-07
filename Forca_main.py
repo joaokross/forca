@@ -8,6 +8,7 @@ animal_pc = random.choice(animais)  # animal aleatorio escolhido pelo computador
 contagem_erros = 0
 tracos = [' ━━ ']
 letras_erradas = []
+corretas_letras = []
 
 def mostra_tracinho():
     for c in tracos:
@@ -203,10 +204,15 @@ while True:
                             break
                 elif tracos.count(' ━━ ') == 0:
                         print('\033[1;32mVOCÊ VENCEU O JOGO, PARABÉNS\033[m')
-                        print(animal_pc)
+                        print(f'\033[1;33mO ANIMAL ESCOLHIDO FOI:\033[m \033[4;32m{animal_pc}\033[m')
                         break
+            if contagem_erros == 6:
+                print('\033[1;31mBOA SORTE NA PROXIMA VEZ\033[m')
+                print(f'\033[1;34mO ANIMAL É: {animal_pc.upper()}\033[m')
 
-
+            letras_erradas.clear()
+            corretas_letras.clear()
+            contagem_erros = 0
             print('\n')
             print('☟'*23)
             cabecario.painel('DESEJA CONTINUAR?')
@@ -215,12 +221,6 @@ while True:
                 print('\033[1;32mObrigado, volte sempre\033[m')
                 break
 
-        if contagem_erros == 6:
-            print('\033[1;31mBOA SORTE NA PROXIMA VEZ\033[m')
-            for c in animal_pc:
-                c.replace(" ", "")
-            print(animal_pc.replace(" ", "-"))
-            break
 
 
         break
